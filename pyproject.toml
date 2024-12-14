@@ -1,0 +1,34 @@
+[project]
+name = 'nxs-python'
+authors = [
+  { name='Xander Hendriks', email='xander@nx-solutions.com' },
+]
+description = 'NXS Shared Python code'
+readme = 'README.rst'
+version='0.0.0'
+requires-python = '>=3.8'
+classifiers = [
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+]
+dependencies = [
+    'flake8==7.1.1',
+    'pyserial==3.5',
+    'pytest==8.3.4',
+    'pytest-json-report==1.5.0',
+]
+
+[project.optional-dependencies]
+gui = ['nicegui==2.8.1']
+
+[tool.setuptools.package-dir]
+nxs_python = 'python'
+
+[project.urls]
+Homepage = 'https://github.com/xanderhendriks/nxs-python'
+Issues = 'https://github.com/xanderhendriks/nxs-python/issues'
+
+[build-system]
+requires = ['setuptools==74.1.2', 'wheel==0.44.0']
+build-backend = 'setuptools.build_meta'

@@ -1,0 +1,23 @@
+name: NXS Python Pipeline
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  analyse-code:
+    name: Analyse code
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4.1.1
+      - name: Install packages and dependencies
+        run: |
+          python3 -m pip install --upgrade pip==24.3.1
+          pip install -e .
+      - name: Flake8 static analysis
+        uses: xanderhendriks/flake8-github-action@v1.0.2
+        with:
+          checkName: 'Analyse code'   # NOTE: this needs to be the same as the job name
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
