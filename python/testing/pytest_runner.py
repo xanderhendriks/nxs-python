@@ -144,11 +144,11 @@ class PytestRunner:
         function. The thread stops automatically when the test process completes.
 
         Args:
-            test_cases (List[str]): A list of pytest-compatible test case identifiers to run. 
+            test_cases (List[str]): A list of pytest-compatible test case identifiers to run.
                 Example: ['test_module.py::test_function'].
-            env_fields (dict, optional): Environment variables to be set for the test process. 
+            env_fields (dict, optional): Environment variables to be set for the test process.
                 Defaults to None.
-            extra_pytest_args (List[str], optional): Additional arguments to pass to pytest. 
+            extra_pytest_args (List[str], optional): Additional arguments to pass to pytest.
                 Example: ['--maxfail=2', '--verbose']. Defaults to None.
 
         Raises:

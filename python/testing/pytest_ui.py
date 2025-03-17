@@ -20,7 +20,8 @@ class PytestUI():
             test_name = test_case_fields[1]
             grouped_tests[module_name].append({'id': f'{module_name}.py::{test_name}', 'label': test_name})
 
-        self.test_cases_tree_list = [{'id': 'test_cases', 'label': 'test cases', 'children': [{'id': module, 'label': module, 'children': children} for module, children in grouped_tests.items()]}]
+        self.test_cases_tree_list = [{'id': 'test_cases', 'label': 'test cases',
+                                      'children': [{'id': module, 'label': module, 'children': children} for module, children in grouped_tests.items()]}]
 
         self.ui_elements()
 
@@ -79,7 +80,7 @@ class PytestUI():
 
     def ui_elements(self):
         with ui.step('Select tests'):
-            self.test_cases_tree = ui.tree(self.test_cases_tree_list, tick_strategy='leaf') # , on_tick=on_tick_test_cases)
+            self.test_cases_tree = ui.tree(self.test_cases_tree_list, tick_strategy='leaf')  # , on_tick=on_tick_test_cases)
             self.test_cases_tree.expand(['test_cases'])
             self.test_cases_tree.tick()
 
